@@ -117,6 +117,7 @@ public class Elevators
 	    System.out.println(resolved+"zip codes resolved.");
 	}
 	
+	//Reads in CSV data
 	public static List<String[]> readData(String file) throws Exception
 	{
 		CSVReader reader = new CSVReader(new FileReader(file));
@@ -126,6 +127,7 @@ public class Elevators
 		return data;
 	}
 	
+	//Trims all zip codes to 5 digits
 	public static void trimZips(List<String []> data)
 	{
 	    int lines = data.size();
@@ -143,6 +145,7 @@ public class Elevators
 	    System.out.println(zips + " zip codes trimmed.");
 	}
 	
+	//Saves results to CSV file
 	public static void saveData(List<String []> data, String filename)
 	{
 		try
@@ -158,6 +161,7 @@ public class Elevators
 		}
 	}
 	
+	//Stores results into a linked list for saving
 	public static void storeResults(LinkedList<String[]> results, String zip, Hashtable<String, Integer> hash)
 	{
 		LinkedList<String> temp = new LinkedList<String>();
@@ -174,6 +178,7 @@ public class Elevators
 		results.add(temp2);
 	}
 	
+	//Runs methods for cleaning data and saves to file for future use
 	public static void cleanData(List<String[]> data)
 	{
 		resolveZipCodes(data);
